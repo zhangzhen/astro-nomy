@@ -49,7 +49,7 @@ const { reverse, data } = Astro.props;
     <div
       class={cn(
         "rounded-xl overflow-hidden border lg:-m-4",
-        reverse ? "order-1" : "order-2",
+        reverse ? "order-1" : "order-2"
       )}
     >
       <div class="relative aspect-video">
@@ -58,7 +58,7 @@ const { reverse, data } = Astro.props;
           src={data.image}
           alt={data.title}
           width={1000}
-          height={600}
+          height={500}
           loading="eager"
         />
       </div>

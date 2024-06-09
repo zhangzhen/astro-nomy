@@ -18,15 +18,15 @@ export type SidebarNavItem = {
   disabled?: boolean;
   external?: boolean;
 } & (
-  | {
+    | {
       href: string;
       items?: never;
     }
-  | {
+    | {
       href?: string;
       items: MenuItem[];
     }
-);
+  );
 
 export type SiteConfig = {
   name: string;
@@ -34,6 +34,7 @@ export type SiteConfig = {
   url: string;
   ogImage: string;
   links: {
+    xielab: string;
     twitter: string;
     github: string;
   };
@@ -49,6 +50,7 @@ export type MarketingConfig = {
 };
 
 export type NavMenuConfig = {
+  dataNav: SidebarNavItem[];
   pagesNav: SidebarNavItem[];
   examplesNav: SidebarNavItem[];
   links: MenuItem[];
@@ -78,6 +80,14 @@ export type Media = {
   title: Title;
   coverImage: CoverImage;
   isAdult: boolean;
+};
+
+export type Download = {
+  id: number;
+  title: string;
+  description: string;
+  url: string;
+  category: string;
 };
 
 type Title = {

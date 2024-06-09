@@ -15,6 +15,7 @@ import { navMenuConfig } from "@/config/nav-menu";
 import type { MenuItem } from "@/types";
 
 const links = navMenuConfig.links;
+const data = navMenuConfig.dataNav[0];
 const pages = navMenuConfig.pagesNav[0];
 const examples = navMenuConfig.examplesNav[0];
 
@@ -49,28 +50,6 @@ export function MainNavigationMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem> */}
 
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>{pages.title}</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {pages.items?.map((page) => (
-                <ListItem key={page.title} {...page} />
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>{examples.title}</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {examples.items?.map((example) => (
-                <ListItem key={example.title} {...example} />
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
         {links ? (
           <NavigationMenuItem>
             {links.map((link) => (
@@ -79,6 +58,7 @@ export function MainNavigationMenu() {
                 href={link.href}
                 className={navigationMenuTriggerStyle()}
                 {...(link.forceReload ? { "data-astro-reload": true } : {})}
+                {...(link.external ? { "target": "_blank" } : {})}
               >
                 {link.title}
               </a>

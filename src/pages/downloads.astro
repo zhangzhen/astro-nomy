@@ -1,0 +1,39 @@
+---
+export const prerender = false;
+
+import { DownloadsTabs } from "@/components/downloads-tabs";
+import MainLayout from "@/layouts/main-layout.astro";
+import { getPlanningAnimes } from "@/lib/graphql";
+import PageHeader from "@/components/page-header.astro";
+
+const data = {
+  human: [
+    {
+      id: 1,
+      title: "GM12878 fresh",
+      description:
+        "bulk sequencing data in fastq.gz format for GM12878 fresh cells",
+      url: "/downloads/file1.zip",
+      category: "cell line",
+    },
+    {
+      id: 2,
+      title: "GM12878 fixed",
+      description:
+        "bulk sequencing data in fastq.gz format for GM12878 fixed cells",
+      url: "/downloads/file2.zip",
+      category: "cell line",
+    },
+  ],
+};
+---
+
+<MainLayout title="Anime List">
+  <section class="container py-8">
+    <PageHeader
+      heading="Downloads"
+      text="Raw data and processed data for download."
+    />
+    <DownloadsTabs downloads={data} client:load />
+  </section>
+</MainLayout>

@@ -1,6 +1,25 @@
 import type { NavMenuConfig } from "@/types";
 
 export const navMenuConfig: NavMenuConfig = {
+  dataNav: [
+    {
+      title: "Data",
+      items: [
+        {
+          title: "In Vivo Assays",
+          href: "/in-vivo",
+          description: "In vivo assays for the evaluation of binding fractions of TFs.",
+          disabled: true,
+        },
+        {
+          title: "In Vitro Assays",
+          href: "/in-vitro",
+          description: "In vitro assays for the evaluation of binding affinities of TFs.",
+          disabled: true,
+        },
+      ],
+    },
+  ],
   pagesNav: [
     {
       title: "Pages",
@@ -16,33 +35,6 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/releases",
           description: "A reproduction of Starlog template with Tailwind CSS.",
           image: "/images/examples/changelog.jpg",
-        },
-        {
-          title: "Waitlist",
-          href: "/waitlist",
-          description:
-            "A waitlist form using Astro DB, React Hook Form & Sonner. Static page.",
-          image: "/images/examples/waitlist.jpg",
-          forceReload: true,
-        },
-        {
-          title: "Pricing",
-          href: "/pricing",
-          description: "Pricing cards, FAQs and more content with price.",
-          image: "/images/examples/pricing.jpg",
-        },
-        {
-          title: "About",
-          href: "/about",
-          description: "A simple page with a masonry gallery and little text.",
-          image: "/images/examples/about.jpg",
-        },
-        {
-          title: "Newsletter",
-          href: "/newsletter",
-          description:
-            "A newsletter form using Astro DB & Simple Stack Form. Counter display!",
-          image: "/images/examples/newsletter.jpg",
         },
       ],
     },
@@ -98,11 +90,18 @@ export const navMenuConfig: NavMenuConfig = {
     },
   ],
   links: [
-    // {
-    //   title: "Example",
-    //   href: "/example",
-    //   description: "Example description",
-    //   image: "/images/examples/image.jpg",
-    // },
+    {
+      title: "Visualize",
+      href: "http://foodie.sunneyxielab.org",
+      description: "Visualize the binding sites of TFs in the genome.",
+      image: "/images/examples/image.jpg",
+      external: true,
+    },
+    {
+      title: "Downloads",
+      href: "/downloads",
+      description: "List of available downloads.",
+      image: "/images/examples/about.jpg",
+    },
   ],
 };

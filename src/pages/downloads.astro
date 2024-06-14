@@ -3,32 +3,68 @@ export const prerender = false;
 
 import { DownloadsTabs } from "@/components/downloads-tabs";
 import MainLayout from "@/layouts/main-layout.astro";
-import { getPlanningAnimes } from "@/lib/graphql";
 import PageHeader from "@/components/page-header.astro";
+import type { DataFile } from "@/types";
+
+const rawDataFiles: DataFile[] = [
+  {
+    fileName: "GM12878_fresh.R1.fastq.gz",
+    fileSize: "34 GB",
+    sample: "GM12878_fresh",
+    sampleClass: "cell line",
+    assay: "bulk FOODIE-seq",
+    dataType: "raw data",
+    downloadUrl: "/data/human/raw/cell_line/GM12878_fresh.R1.fastq.gz",
+    organism: "human",
+  },
+  {
+    fileName: "GM12878_fresh.R1.fastq.gz",
+    fileSize: "36 GB",
+    sample: "GM12878_fresh",
+    sampleClass: "cell line",
+    assay: "bulk FOODIE-seq",
+    dataType: "raw data",
+    downloadUrl: "/data/human/raw/cell_line/GM12878_fresh.R1.fastq.gz",
+    organism: "human",
+  },
+];
+
+const processedDataFiles: DataFile[] = [
+  {
+    fileName: "GM12878_fixed.bam",
+    fileSize: "23 GB",
+    sample: "GM12878_fixed",
+    sampleClass: "cell line",
+    assay: "bulk FOODIE-seq",
+    dataType: "processed data",
+    downloadUrl: "/data/human/processed/cell_line/GM12878_fixed.bam",
+    organism: "human",
+  },
+  {
+    fileName: "GM12878_fixed.bam.bai",
+    fileSize: "6.8 MB",
+    sample: "GM12878_fixed",
+    sampleClass: "cell line",
+    assay: "bulk FOODIE-seq",
+    dataType: "processed data",
+    downloadUrl: "/data/human/processed/cell_line/GM12878_fixed.bam.bai",
+    organism: "human",
+  },
+];
 
 const data = {
-  human: [
-    {
-      id: 1,
-      title: "GM12878 fresh",
-      description:
-        "bulk sequencing data in fastq.gz format for GM12878 fresh cells",
-      url: "/downloads/file1.zip",
-      category: "cell line",
-    },
-    {
-      id: 2,
-      title: "GM12878 fixed",
-      description:
-        "bulk sequencing data in fastq.gz format for GM12878 fixed cells",
-      url: "/downloads/file2.zip",
-      category: "cell line",
-    },
-  ],
+  human: {
+    rawData: rawDataFiles,
+    processedData: processedDataFiles,
+  },
+  mouse: {
+    rawData: [],
+    processedData: [],
+  },
 };
 ---
 
-<MainLayout title="Anime List">
+<MainLayout title="Downloads">
   <section class="container py-8">
     <PageHeader
       heading="Downloads"

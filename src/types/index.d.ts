@@ -35,6 +35,7 @@ export type SiteConfig = {
   ogImage: string;
   links: {
     xielab: string;
+    foodie: string;
     twitter: string;
     github: string;
   };
@@ -82,13 +83,16 @@ export type Media = {
   isAdult: boolean;
 };
 
-export type Download = {
-  id: number;
-  title: string;
-  description: string;
-  url: string;
-  category: string;
-};
+export type DataFile = {
+  sample: string
+  sampleClass: string
+  organism: string
+  assay: string
+  dataType: string
+  fileName: string
+  fileSize: string
+  downloadUrl: string
+}
 
 type Title = {
   userPreferred: string;

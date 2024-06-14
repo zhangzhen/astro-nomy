@@ -3,19 +3,17 @@ import ExampleGrid from "@/components/example-grid.astro";
 import PageHeader from "@/components/page-header.astro";
 import { navMenuConfig } from "@/config/nav-menu";
 import MainLayout from "@/layouts/main-layout.astro";
+import HeroHome from "@/components/sections/hero-home.astro";
+import InfoLanding from "@/components/sections/info-landing.astro";
+import { infos } from "@/config/landing";
 
 const data = navMenuConfig.dataNav[0].items;
 ---
 
 <MainLayout title="">
-  <div class="bg-background-200">
-    <section class="container py-12">
-      <PageHeader
-        heading="Discovery"
-        text="Differents pages and examples apps built with Astro v4.5, shadcn/ui & react js. Fully Open Source."
-      />
-
-      <ExampleGrid title="Data" items={data} />
-    </section>
-  </div>
+  <HeroHome />
+  <section class="container py-12">
+    <PageHeader heading="Discovery" text="" />
+    <InfoLanding data={infos[0]} reverse={true} />
+  </section>
 </MainLayout>

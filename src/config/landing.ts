@@ -2,26 +2,31 @@ import type { InfoLdg } from "@/types";
 
 export const infos: InfoLdg[] = [
   {
-    title: "Empower your projects",
+    title: "Highlights of FOODIE",
     description:
-      "Unlock the full potential of your projects with our open-source SaaS platform. Collaborate seamlessly, innovate effortlessly, and scale limitlessly.",
+      "Discover TFs’ binding sequences along the genome",
     image: "/images/schematic.jpg",
     list: [
       {
-        title: "Collaborative",
-        description: "Work together with your team members in real-time.",
-        icon: "lucide:laptop",
+        title: "Genome-wide",
+        description: "Identify genome-wide mapping of TF footprints.",
+        icon: "lucide:dna",
       },
       {
-        title: "Innovative",
-        description: "Stay ahead of the curve with access constant updates.",
-        icon: "lucide:settings",
+        title: "Single-base resolution",
+        description: "Detect the binding sites of TFs at single-base resolution.",
+        icon: "lucide:telescope",
       },
       {
-        title: "Scalable",
+        title: "Versatile",
         description:
-          "Our platform offers the scalability needed to adapt to your needs.",
-        icon: "lucide:search",
+          "Enable both bulk and single-cell experiments of various organisms.",
+        icon: "lucide:eclipse",
+      },
+      {
+        title: "Cost-efficient",
+        description: "Requires sequencing samples of only thousands of cells.",
+        icon: "lucide:coins",
       },
     ],
   },

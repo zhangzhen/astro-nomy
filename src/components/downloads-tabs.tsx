@@ -1,23 +1,19 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
-import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/icons";
-import type { Download } from "@/types";
-import { Download as DownloadIcon } from "lucide-react"
+import type { DataFile } from "@/types";
+import { DataFilesTable } from "@/components/data-tables/downloads/page";
 
 interface DownloadsTabsProps {
   downloads: {
-    human: Download[];
-    mouse: Download[];
+    human: {
+      rawData: DataFile[];
+      processedData: DataFile[];
+    };
+    mouse: {
+      rawData: DataFile[];
+      processedData: DataFile[];
+    };
   };
 }
 
@@ -64,53 +60,17 @@ export function DownloadsTabs({ downloads }: DownloadsTabsProps) {
               <h2 className="text-2xl font-semibold tracking-tight">
                 Raw data
               </h2>
-              <p className="text-sm text-muted-foreground">
-                Sequencing data in fastq.gz format.
-              </p>
             </div>
           </div>
-          <Separator className="my-4" />
-          <div
-            className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-y-7 lg:gap-x-7"
-          >
-            {value.map((download, i) => (
-              <DownloadCard key={key + "-" + i} data={download} />
-            ))}
-          </div>
+          <DataFilesTable dataFiles={value.rawData} />
           <div className="mt-6 space-y-1">
             <h2 className="text-2xl font-semibold tracking-tight">
               Processed data
             </h2>
-            <p className="text-sm text-muted-foreground">
-              Processed data in bigwig format.
-            </p>
           </div>
-          <Separator className="my-4" />
+          <DataFilesTable dataFiles={value.processedData} />
         </TabsContent>
       ))}
     </Tabs>
-  );
-}
-
-function DownloadCard({ data }: { data: Download }) {
-  return (
-    <Card>
-      <CardHeader>
-        <div className="flex justify-between">
-          <CardTitle>{data.title}</CardTitle>
-          <Badge variant="secondary" radius="md" className="capitalize">{data.category}</Badge>
-        </div>
-        <CardDescription>{data.description}</CardDescription>
-      </CardHeader>
-      {/* Optional CardFooter */}
-      <CardFooter className="flex justify-end gap-x-2">
-        <a className={buttonVariants({ variant: "default", size: "sm" })}>
-          <DownloadIcon className="mr-2 h-4 w-4" /> Read 1
-        </a>
-        <a className={buttonVariants({ variant: "default", size: "sm" })}>
-          <DownloadIcon className="mr-2 h-4 w-4" /> Read 2
-        </a>
-      </CardFooter>
-    </Card>
   );
 }

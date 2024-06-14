@@ -92,7 +92,7 @@ export const navMenuConfig: NavMenuConfig = {
   links: [
     {
       title: "Visualize",
-      href: "http://foodie.sunneyxielab.org",
+      href: "/jbrowse2",
       description: "Visualize the binding sites of TFs in the genome.",
       image: "/images/examples/image.jpg",
       external: true,

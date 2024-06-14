@@ -8,25 +8,29 @@ export const infos: InfoLdg[] = [
     image: "/images/schematic.jpg",
     list: [
       {
-        title: "Genome-wide",
-        description: "Identify genome-wide mapping of TF footprints.",
-        icon: "lucide:dna",
-      },
-      {
         title: "Single-base resolution",
-        description: "Detect the binding sites of TFs at single-base resolution.",
-        icon: "lucide:telescope",
+        description: "",
+        icon: "lucide:square-check-big",
       },
       {
-        title: "Versatile",
-        description:
-          "Enable both bulk and single-cell experiments of various organisms.",
-        icon: "lucide:eclipse",
+        title: "Requires only a small number of cells",
+        description: "",
+        icon: "lucide:square-check-big",
       },
       {
-        title: "Cost-efficient",
-        description: "Requires sequencing samples of only thousands of cells.",
-        icon: "lucide:coins",
+        title: "Easy experimental procedure, short completion time",
+        description: "",
+        icon: "lucide:square-check-big",
+      },
+      {
+        title: "In-situ condition within cell nucleus",
+        description: "",
+        icon: "lucide:square-check-big",
+      },
+      {
+        title: "High throughput",
+        description: "",
+        icon: "lucide:square-check-big",
       },
     ],
   },

@@ -13,7 +13,10 @@ const data = navMenuConfig.dataNav[0].items;
 <MainLayout title="">
   <HeroHome />
   <section class="container py-12">
-    <PageHeader heading="Overview" text="" />
+    <PageHeader
+      heading="Overview"
+      text="An individual’s somatic cells have the same genome but exhibit cell-type-specific transcriptome regulated by a combination of transcription factors (TFs) for each gene. Mapping of TF sites on the human genome is critically important for understanding functional genomics. Here we introduce a novel technique to measure human TFs’ binding sites genome-wide with single-base resolution by footprinting with deaminase (FOODIE). Single-molecule sequencing reads from thousands of cells after in situ deamination yielded site-specific TF binding fractions and the cooperativity among adjacent TFs."
+    />
     <InfoLanding data={infos[0]} reverse={true} />
   </section>
 </MainLayout>

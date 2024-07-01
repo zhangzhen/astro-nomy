@@ -5,7 +5,7 @@ export const infos: InfoLdg[] = [
     title: "Highlights of FOODIE",
     description:
       "Discover TFs’ binding sequences along the genome",
-    image: "/images/schematic.jpg",
+    image: "/images/schematic-new.jpg",
     list: [
       {
         title: "Single-molecule measurement, single-base resolution",

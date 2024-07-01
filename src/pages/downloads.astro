@@ -87,6 +87,46 @@ const rawDataFiles: DataFile[] = [
     downloadUrl: "/data/human/raw/cell_line/K562_heatshock_control.R2.fastq.gz",
     organism: "human",
   },
+  {
+    fileName: "single-cell_human_Hela.tar.gz",
+    fileSize: "47 GB",
+    sample: "single-cell_human_Hela (bundled)",
+    sampleClass: "cell line",
+    assay: "single-cell FOODIE",
+    dataType: "raw data",
+    downloadUrl: "/data/human/raw/cell_line/single-cell_human_Hela.tar.gz",
+    organism: "human",
+  },
+  {
+    fileName: "single-cell_human_HEK293T.tar.gz",
+    fileSize: "53 GB",
+    sample: "single-cell_human_HEK293T (bundled)",
+    sampleClass: "cell line",
+    assay: "single-cell FOODIE",
+    dataType: "raw data",
+    downloadUrl: "/data/human/raw/cell_line/single-cell_human_HEK293T.tar.gz",
+    organism: "human",
+  },
+  {
+    fileName: "single-cell_human_GM.tar.gz",
+    fileSize: "57 GB",
+    sample: "single-cell_human_GM12878 (bundled)",
+    sampleClass: "cell line",
+    assay: "single-cell FOODIE",
+    dataType: "raw data",
+    downloadUrl: "/data/human/raw/cell_line/single-cell_human_GM.tar.gz",
+    organism: "human",
+  },
+  {
+    fileName: "single-cell_human_K562.tar.gz",
+    fileSize: "39 GB",
+    sample: "single-cell_human_K562 (bundled)",
+    sampleClass: "cell line",
+    assay: "single-cell FOODIE",
+    dataType: "raw data",
+    downloadUrl: "/data/human/raw/cell_line/single-cell_human_K562.tar.gz",
+    organism: "human",
+  },
 ];
 
 const processedDataFiles: DataFile[] = [
@@ -255,6 +295,63 @@ const processedDataFiles: DataFile[] = [
       "/data/human/processed/cell_line/K562_heatshock_control.bam.bai",
     organism: "human",
   },
+  {
+    fileName: "single-cell_human_Hela_bedfiles.tar.gz",
+    fileSize: "2.5 GB",
+    sample: "single-cell_human_Hela (bundled)",
+    sampleClass: "cell line",
+    assay: "single-cell FOODIE",
+    dataType: "processed data",
+    downloadUrl:
+      "/data/human/processed/cell_line/single-cell_human_Hela_bedfiles.tar.gz",
+    organism: "human",
+  },
+  {
+    fileName: "single-cell_human_HEK293T_bedfiles.tar.gz",
+    fileSize: "2.8 GB",
+    sample: "single-cell_human_HEK293T (bundled)",
+    sampleClass: "cell line",
+    assay: "single-cell FOODIE",
+    dataType: "processed data",
+    downloadUrl:
+      "/data/human/processed/cell_line/single-cell_human_HEK293T.tar.gz",
+    organism: "human",
+  },
+  {
+    fileName: "single-cell_human_GM_bedfiles.tar.gz",
+    fileSize: "3.4 GB",
+    sample: "single-cell_human_GM12878 (bundled)",
+    sampleClass: "cell line",
+    assay: "single-cell FOODIE",
+    dataType: "processed data",
+    downloadUrl:
+      "/data/human/processed/cell_line/single-cell_human_GM_bedfiles.tar.gz",
+    organism: "human",
+  },
+  {
+    fileName: "single-cell_human_K562_bedfiles.tar.gz",
+    fileSize: "951 MB",
+    sample: "single-cell_human_K562 (bundled)",
+    sampleClass: "cell line",
+    assay: "single-cell FOODIE",
+    dataType: "processed data",
+    downloadUrl:
+      "/data/human/processed/cell_line/single-cell_human_K562_bedfiles.tar.gz",
+    organism: "human",
+  },
+];
+
+const mouseRawDataFiles: DataFile[] = [
+  {
+    fileName: "single-cell_mouse_hippoampus.tar.gz",
+    fileSize: "69 GB",
+    sample: "single-cell_mouse_hippoampus (bundled)",
+    sampleClass: "tissue",
+    assay: "single-cell FOODIE",
+    dataType: "raw data",
+    downloadUrl: "/data/mouse/raw/tissue/single-cell_mouse_hippoampus.tar.gz",
+    organism: "mouse",
+  },
 ];
 
 const data = {
@@ -263,7 +360,7 @@ const data = {
     processedData: processedDataFiles,
   },
   mouse: {
-    rawData: [],
+    rawData: mouseRawDataFiles,
     processedData: [],
   },
 };

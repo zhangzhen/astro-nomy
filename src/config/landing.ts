@@ -8,29 +8,29 @@ export const infos: InfoLdg[] = [
     image: "/images/schematic.jpg",
     list: [
       {
-        title: "Single-base resolution",
+        title: "Single-molecule measurement, single-base resolution",
         description: "",
-        icon: "lucide:square-check-big",
+        icon: "lucide:star",
       },
       {
-        title: "Requires only a small number of cells",
+        title: "Requires only a small number of cells, even single-cells",
         description: "",
-        icon: "lucide:square-check-big",
+        icon: "lucide:star",
       },
       {
         title: "Easy experimental procedure, short completion time",
         description: "",
-        icon: "lucide:square-check-big",
+        icon: "lucide:star",
       },
       {
         title: "In-situ condition within cell nucleus",
         description: "",
-        icon: "lucide:square-check-big",
+        icon: "lucide:star",
       },
       {
         title: "High throughput",
         description: "",
-        icon: "lucide:square-check-big",
+        icon: "lucide:star",
       },
     ],
   },

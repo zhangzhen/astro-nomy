@@ -21,14 +21,11 @@ const { title, description, bodyClass } = Astro.props;
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9T2DHMW2L8"
     ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-9T2DHMW2L8");
-    </script>
+    <script
+      set:html={`
+window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-9T2DHMW2L8');
+`}
+    />
   </head>
   <body class={cn("flex flex-col min-h-screen", bodyClass)}>
     <slot />

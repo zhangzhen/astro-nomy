@@ -11,6 +11,7 @@ import { siteConfig } from "@/config/site";
 import { Icon } from "astro-icon/components";
 // import { marketingConfig } from "@/config/marketing";
 // import MainNav from "@/components/layout/main-nav.astro";
+import { Image } from "astro:assets";
 
 type Props = {
   title: string;
@@ -41,6 +42,15 @@ const { title, description, mainClass } = Astro.props;
     />
 
     <div class="flex items-center gap-x-4" slot="right-header">
+      <a href="https://cpl.ac.cn/en/" target="_blank" rel="noreferrer">
+        <Image
+          class="object-cover object-center"
+          src="/images/cpl_logo2_en.svg"
+          alt="CPL Logo"
+          width={180}
+          height={50}
+        />
+      </a>
       <a
         href={siteConfig.links.github}
         target="_blank"

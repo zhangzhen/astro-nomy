@@ -56,23 +56,23 @@ const cellLines: CellLineInfo[] = [
 
 const cellLineFiles: DataFile[] = cellLines.flatMap((cellLine) => [
   {
-    fileName: `${cellLine.name}.R1.fastq.gz`,
+    fileName: `${cellLine.name}_R1.fastq.gz`,
     fileSize: cellLine.fileSizeR1,
     sample: cellLine.name,
     sampleClass: "cell line",
     assay: "bulk FOODIE-seq",
     dataType: "raw data",
-    downloadUrl: `/data/human/raw/cell_line/${cellLine.name}.R1.fastq.gz`,
+    downloadUrl: `/data/human/raw/cell_line/${cellLine.name}_R1.fastq.gz`,
     organism: "human",
   },
   {
-    fileName: `${cellLine.name}.R2.fastq.gz`,
+    fileName: `${cellLine.name}_R2.fastq.gz`,
     fileSize: cellLine.fileSizeR2,
     sample: cellLine.name,
     sampleClass: "cell line",
     assay: "bulk FOODIE-seq",
     dataType: "raw data",
-    downloadUrl: `/data/human/raw/cell_line/${cellLine.name}.R2.fastq.gz`,
+    downloadUrl: `/data/human/raw/cell_line/${cellLine.name}_R2.fastq.gz`,
     organism: "human",
   },
 ]);
@@ -434,7 +434,7 @@ const mouseRawDataFiles: DataFile[] = [...mouseHippoPartSizes.entries()].map(
     sampleClass: "tissue",
     assay: "single-cell FOODIE",
     dataType: "raw data",
-    downloadUrl: `/data/mouse/raw/tissue/single-cell_mouse_hippocampus_P${index + 2}.fastq.gz`,
+    downloadUrl: `/data/mouse/raw/tissue/single-cell_mouse_hippocampus_P${index + 2}.tar.gz`,
     organism: "mouse",
   }),
 );

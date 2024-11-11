@@ -115,3 +115,9 @@ export type InfoLdg = {
   description: string;
   list: InfoList[];
 }
+
+export type CellLineInfo = {
+  name: string;
+  fileSizeR1: string;
+  fileSizeR2: string;
+}

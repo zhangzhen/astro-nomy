@@ -4,7 +4,78 @@ export const prerender = false;
 import { DownloadsTabs } from "@/components/downloads-tabs";
 import MainLayout from "@/layouts/main-layout.astro";
 import PageHeader from "@/components/page-header.astro";
-import type { DataFile } from "@/types";
+import type { DataFile, CellLineInfo } from "@/types";
+
+const cellLines: CellLineInfo[] = [
+  {
+    name: "H522_fresh",
+    fileSizeR1: "11 GB",
+    fileSizeR2: "11 GB",
+  },
+  {
+    name: "HCC2998_fresh",
+    fileSizeR1: "20 GB",
+    fileSizeR2: "20 GB",
+  },
+  {
+    name: "HCT116_fresh",
+    fileSizeR1: "19 GB",
+    fileSizeR2: "20 GB",
+  },
+  {
+    name: "HCT-15_fresh",
+    fileSizeR1: "18 GB",
+    fileSizeR2: "17 GB",
+  },
+  {
+    name: "K562_fresh",
+    fileSizeR1: "27 GB",
+    fileSizeR2: "27 GB",
+  },
+  {
+    name: "M14_fresh",
+    fileSizeR1: "21 GB",
+    fileSizeR2: "21 GB",
+  },
+  {
+    name: "MCF10A_fresh",
+    fileSizeR1: "18 GB",
+    fileSizeR2: "19 GB",
+  },
+  {
+    name: "OE19_fresh",
+    fileSizeR1: "31 GB",
+    fileSizeR2: "31 GB",
+  },
+  {
+    name: "PANC1_fresh",
+    fileSizeR1: "17 GB",
+    fileSizeR2: "17 GB",
+  },
+];
+
+const cellLineFiles: DataFile[] = cellLines.flatMap((cellLine) => [
+  {
+    fileName: `${cellLine.name}.R1.fastq.gz`,
+    fileSize: cellLine.fileSizeR1,
+    sample: cellLine.name,
+    sampleClass: "cell line",
+    assay: "bulk FOODIE-seq",
+    dataType: "raw data",
+    downloadUrl: `/data/human/raw/cell_line/${cellLine.name}.R1.fastq.gz`,
+    organism: "human",
+  },
+  {
+    fileName: `${cellLine.name}.R2.fastq.gz`,
+    fileSize: cellLine.fileSizeR2,
+    sample: cellLine.name,
+    sampleClass: "cell line",
+    assay: "bulk FOODIE-seq",
+    dataType: "raw data",
+    downloadUrl: `/data/human/raw/cell_line/${cellLine.name}.R2.fastq.gz`,
+    organism: "human",
+  },
+]);
 
 const rawDataFiles: DataFile[] = [
   {
@@ -127,6 +198,7 @@ const rawDataFiles: DataFile[] = [
     downloadUrl: "/data/human/raw/cell_line/single-cell_human_K562.tar.gz",
     organism: "human",
   },
+  ...cellLineFiles,
 ];
 
 const processedDataFiles: DataFile[] = [
@@ -341,18 +413,31 @@ const processedDataFiles: DataFile[] = [
   },
 ];
 
-const mouseRawDataFiles: DataFile[] = [
-  {
-    fileName: "single-cell_mouse_hippocampus.tar.gz",
-    fileSize: "69 GB",
-    sample: "single-cell_mouse_hippocampus (bundled)",
+const mouseHippoPartSizes: string[] = [
+  "36 GB",
+  "42 GB",
+  "42 GB",
+  "42 GB",
+  "43 GB",
+  "48 GB",
+  "50 GB",
+  "48 GB",
+  "49 GB",
+  "28 GB",
+];
+
+const mouseRawDataFiles: DataFile[] = [...mouseHippoPartSizes.entries()].map(
+  ([index, fileSize]) => ({
+    fileName: `single-cell_mouse_hippocampus_P${index + 2}.tar.gz`,
+    fileSize,
+    sample: `single-cell_mouse_hippocampus (part ${index + 2})`,
     sampleClass: "tissue",
     assay: "single-cell FOODIE",
     dataType: "raw data",
-    downloadUrl: "/data/mouse/raw/tissue/single-cell_mouse_hippocampus.tar.gz",
+    downloadUrl: `/data/mouse/raw/tissue/single-cell_mouse_hippocampus_P${index + 2}.fastq.gz`,
     organism: "mouse",
-  },
-];
+  }),
+);
 
 const data = {
   human: {

@@ -21,6 +21,7 @@ export default defineConfig({
   }), icon(), sitemap(), react(), tailwind({
     applyBaseStyles: false
   }), db(), simpleStackForm()],
+  prefetch: false,
   output: "hybrid",
   adapter: node({
     mode: "standalone"

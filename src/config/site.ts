@@ -10,7 +10,7 @@ export const siteConfig: SiteConfig = {
     xielab: "https://sunneyxielab.org/",
     foodie: "https://foodie.sunneyxielab.org/",
     twitter: "https://twitter.com/miickasmt",
-    github: "https://github.com/gaolong/foodie",
+    github: "https://github.com/zhangzhen/bulk-foodie-pipeline",
   },
 };
 
